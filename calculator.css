@@ -1,0 +1,164 @@
+html{
+    font-family: monospace;
+    font-size: 20pt;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgb(78, 131, 255), rgb(113, 55, 249));
+}
+
+.calculator{
+    display: grid;
+    /* grid-template-areas:
+        "screen screen screen screen"
+        "buttons buttons buttons buttons"
+        "buttons buttons buttons buttons"
+        "buttons buttons buttons buttons"
+        "buttons buttons buttons buttons"
+        "buttons buttons buttons buttons";  */
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: 30% repeat(5, 10%);
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    box-shadow: 0px 0px 100px rgb(0, 0, 0), inset 0 0 40px 20px rgb(33, 32, 32);
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    width: 87vw;
+    height: 75vh;
+    background-color: rgb(54, 54, 54);
+    border-radius: 30px;
+}
+
+.screen{
+    grid-column: 1/5;
+    width: 85%;
+    justify-self: center;
+    display: flex;
+    justify-content: end;
+    align-content: center;
+    height: 50%;
+    padding: 0 0.5rem 0 0.5rem;
+    color: white;
+    align-items: center;
+    background-color: rgb(143, 143, 95);
+    box-shadow:  inset 0 0 20px 20px rgb(102, 102, 71), 0 0 40px 20px rgb(33, 32, 32);
+    border-radius: 15px;
+    margin: 2rem 1rem 1rem 1rem;
+    text-overflow: clip;
+    overflow: hidden;
+    
+}
+
+.buttons{
+    grid-area: buttons;
+    display: grid;
+    grid: 2.5rem 2.5rem 2.5rem 2.5rem 2.5rem / 2.5rem 2.5rem 2.5rem 2.5rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.btn{
+    font-weight: 700;
+    color: white;
+    display: grid;
+    margin: none;
+    padding: none;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: rgb(124, 124, 124);
+    box-shadow: inset 0 0 20px 10px rgb(59, 59, 59), 0 0 50px 10px rgb(33, 32, 32);
+}
+
+.btn:hover{
+    cursor: pointer;
+}
+
+.clear{
+    background-color: rgb(255, 86, 24);
+    color: rgb(83, 29, 9);
+    box-shadow: inset 0 0 20px 10px rgb(136, 47, 15), 0 0 50px 10px rgb(33, 32, 32);
+}
+
+.op{
+    background-color: rgb(85, 104, 57);
+    color: rgb(127, 188, 29);
+    box-shadow: inset 0 0 20px 10px rgb(65, 80, 44), 0 0 50px 10px rgb(33, 32, 32);
+}
+
+.eq{
+    background-color: rgb(134, 186, 56);
+    color: rgb(30, 41, 15);
+    box-shadow: inset 0 0 20px 10px rgb(65, 80, 44), 0 0 50px 10px rgb(33, 32, 32);
+}
+
+.presets{
+    display: grid;
+    grid: 100%/25% 25% 25% 25%;
+    justify-content: center;
+    align-content: center;
+    height: 21.25vw;
+    column-gap: 0.5rem;
+    width: 85vw;
+    justify-self: center;
+}
+
+.choice {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    border: 5px solid  white;
+    border-radius: 50%;
+    box-shadow: 0 0 20px black;
+}
+
+.choice:hover{
+    cursor: pointer;
+}
+
+.red{
+    --first: rgb(219, 70, 43);
+    --second: rgb(114, 17, 17);
+    background: radial-gradient(circle, var(--first), var(--second));
+}
+
+.blue{
+    --first: rgb(78, 131, 255);
+    --second: rgb(113, 55, 249);
+    background: radial-gradient(circle, var(--first), var(--second));
+}
+
+.green{
+    --first: rgb(51, 183, 49);
+    --second: rgb(26, 93, 24);
+    background: radial-gradient(circle, var(--first), var(--second));
+}
+
+.yellow{
+    --first: rgb(231, 234, 51);
+    --second: rgb(255, 140, 0);
+    background: radial-gradient(circle, var(--first), var(--second));
+}
+
+@media only screen and (min-width: 501px){
+    .calculator{
+        width: 475px;
+    }
+
+    .presets{
+        width: 475px;
+        height: 118.75px;
+    }
+}
